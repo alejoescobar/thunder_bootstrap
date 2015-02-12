@@ -1,0 +1,17 @@
+<div class="row text-center">
+	<div class="col-md-4 col-md-offset-4">	
+		<div class="well well-lg">
+			<figure>
+				<%= image_tag Gravatar.new(@friend.email).image_url(s: 300) %>
+				<p><%= @friend.name %>, <strong><%= @friend.age %> años</strong></p>
+
+				<button class="btn btn-success like">
+					<%= link_to "Me Gusta", friends_like_path(id: @friend, liked: true), method: :post %>
+				</button>
+				<button class="btn btn-danger nolike">
+					<%= link_to "No Me Gusta", friends_like_path(id: @friend, liked: false), method: :post %>
+				</button>
+			</figure>
+		</div>
+	</div>
+</div>
